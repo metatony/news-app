@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/material.dart';
 import 'package:news_app/utilities/exports.dart';
 
 class Pages extends StatelessWidget {
