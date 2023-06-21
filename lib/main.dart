@@ -1,14 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:device_preview/device_preview.dart';
+import 'package:news_app/screens/homepage/homepage.dart';
 import 'utilities/exports.dart';
-
 
 void main() {
   runApp(
     DevicePreview(
-      enabled: true,
       builder: (context) => MyApp(),
+      enabled: false,
     ),
   );
 }
@@ -22,11 +22,12 @@ class MyApp extends StatelessWidget {
       designSize: Size(428, 926),
       minTextAdapt: true,
       builder: (BuildContext context, child) => MaterialApp(
-        theme: ThemeData(fontFamily: GoogleFonts.poppins().fontFamily),
+        theme: ThemeData(
+            appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
+            fontFamily: GoogleFonts.poppins().fontFamily),
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+        home: HomePage(),
       ),
     );
-    
   }
 }

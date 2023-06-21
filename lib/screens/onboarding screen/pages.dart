@@ -33,14 +33,11 @@ class Pages extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    header,
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 24.sp),
-                  ),
+                  Text(header,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 24.sp)),
                   SizedBox(height: 5.h),
-                  Text(body,
-                  style: TextStyle(fontSize: 18.sp)),
+                  Text(body, style: TextStyle(fontSize: 18.sp)),
                 ],
               ),
             ),
