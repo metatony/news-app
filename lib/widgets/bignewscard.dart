@@ -1,11 +1,19 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '../utilities/exports.dart';
 
 class BigNewsCard extends StatelessWidget {
-  const BigNewsCard({
+   BigNewsCard({
     super.key,
+    required this.title,
+    this.description,
+    required this.image,
   });
+
+  final String title, image;
+  String? description;
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +26,21 @@ class BigNewsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
-                child:
-                    Container(height: 183.h, width: 364.w, color: Colors.grey)),
+              child: SizedBox(
+                height: 183.h,
+                width: 364.w,
+                child: CachedNetworkImage(imageUrl: image, fit: BoxFit.cover,)
+              ),
+            ),
             SizedBox(height: 8.h),
             Text(
-              'Europe',
+              title,
               style: smallText,
             ),
-            Text(
-              'Russian warship: Moskva sinks in Black Sea',
-              style: TextStyle(fontWeight: FontWeight.w600),
-            ),
+           // Text(
+           //   description,
+           //   style: TextStyle(fontWeight: FontWeight.w600),
+           // ),
           ],
         ),
       ),
