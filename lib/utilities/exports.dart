@@ -7,5 +7,7 @@ export 'package:news_app/models/constants.dart';
 export 'package:news_app/widgets/bignewscard.dart';
 export 'package:news_app/widgets/frame.dart';
 export 'package:tab_indicator_styler/tab_indicator_styler.dart';
-
-
+export 'package:cached_network_image/cached_network_image.dart';
+export 'package:news_app/models/trending_model.dart';
+export 'package:news_app/models/list.dart';
+export 'package:news_app/screens/tabs/all_tab.dart';

@@ -18,7 +18,7 @@ List pages = [
 
 List newsLabel = [
   'All',
-  'Sports',
+  'Tesla',
   'Politics',
   'Business',
   'Crypto',
