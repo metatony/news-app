@@ -1,11 +1,13 @@
 class TrendingNews {
   String title;
   String urlToImage;
-  //String description;
+  String author;
+  String publisher;
 
-  TrendingNews(
-      {required this.title,
-      required this.urlToImage,
-      //required this.description
-      });
+  TrendingNews({
+    required this.title,
+    required this.urlToImage,
+    required this.publisher,
+    required this.author,
+  });
 }

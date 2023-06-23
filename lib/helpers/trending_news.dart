@@ -13,19 +13,19 @@ class News {
     var response = await http.get(Uri.parse(url));
     var jsonData = jsonDecode(response.body);
 
-    if (jsonData['status'] == 'ok') {
+    if (response.statusCode == 200) {
       for (var eachNews in jsonData['articles']) {
-        final trend = TrendingNews(
-          title: eachNews['title'] ?? 'No Title Available'  ,
-          urlToImage: eachNews['urlToImage'] ?? 'No Title Available',
-          //description: eachNews['description'] ?? 'No Title Available',
+        final trendList = TrendingNews(
+          title: eachNews['title'] ?? 'No data Available',
+          urlToImage: eachNews['urlToImage'] ?? 'No data Available',
+          publisher: eachNews['source']['name'] ?? 'No data Available',
+          author: eachNews['author'] ?? 'No data Available',
         );
-        trendingNews.add(trend);
+        trendingNews.add(trendList);
+        print(response.statusCode);
       }
     } else {
       throw Exception('failed to fetch data');
-    } 
+    }
   }
-
-
 }

@@ -21,5 +21,8 @@ List newsLabel = [
   'Sports',
   'Politics',
   'Business',
-  'Crypto'
+  'Crypto',
+  'Health',
+  'Travel',
+  'Science'
 ];
