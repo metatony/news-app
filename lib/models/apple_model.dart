@@ -1,10 +1,10 @@
-class TrendingNews {
+class AppleNews {
   String title;
   String urlToImage;
   String author;
   String publisher;
 
-  TrendingNews({
+  AppleNews({
     required this.title,
     required this.urlToImage,
     required this.publisher,

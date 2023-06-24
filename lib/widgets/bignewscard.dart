@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:cached_network_image/cached_network_image.dart';
-
 import '../utilities/exports.dart';
 
 class BigNewsCard extends StatelessWidget {
@@ -37,7 +35,7 @@ class BigNewsCard extends StatelessWidget {
             ),
             SizedBox(height: 8.h),
             Text(title.length > 5 ? '${title.substring(0, 55)}...' : title,
-                style: smallText),
+                style: smallText ),
             Row(
               children: [
                 Text(publisher,
@@ -45,8 +43,8 @@ class BigNewsCard extends StatelessWidget {
                         fontWeight: FontWeight.w500, fontSize: 14.sp)),
                 width,
                 vHeight,
-                Text('Author : $author',
-                    style: TextStyle(color: Colors.grey, fontSize: 14.sp)),
+                //Text('Author : $author',
+                   // style: TextStyle(color: Colors.grey, fontSize: 14.sp)),
               ],
             ),
           ],

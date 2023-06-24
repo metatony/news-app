@@ -1,27 +1,28 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:news_app/models/tesla_model.dart';
+import 'package:news_app/models/tech_model.dart';
 
 class News {
-  List<TeslaNews> teslaNews = [];
+  List<TechNews> techNews = [];
 
   Future<void> getNews() async {
     String url =
-        'https://newsapi.org/v2/everything?q=tesla&from=2023-05-24&sortBy=publishedAt&apiKey=6d18482b6ce244cca73a6f19a42e926b';
+        'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=6d18482b6ce244cca73a6f19a42e926b';
 
     var response = await http.get(Uri.parse(url));
     var jsonData = jsonDecode(response.body);
 
     if (response.statusCode == 200) {
       for (var eachNews in jsonData['articles']) {
-        final trendList = TeslaNews(
+        final techList = TechNews(
           title: eachNews['title'] ?? 'No data Available',
           urlToImage: eachNews['urlToImage'] ?? 'No data Available',
           publisher: eachNews['source']['name'] ?? 'No data Available',
           author: eachNews['author'] ?? 'No data Available',
         );
-        teslaNews.add(trendList);
+        techNews.add(techList);
+        //print(response.statusCode);
       }
     } else {
       throw Exception('failed to fetch data');

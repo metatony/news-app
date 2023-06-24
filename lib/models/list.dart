@@ -17,12 +17,9 @@ List pages = [
 ];
 
 List newsLabel = [
-  'All',
+  'Headlines',
   'Tesla',
-  'Politics',
-  'Business',
-  'Crypto',
-  'Health',
-  'Travel',
-  'Science'
+  'Apple',
+  'TechCrunch',
+  'Wall Street Journal',
 ];

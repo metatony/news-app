@@ -1,18 +1,18 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:news_app/helpers/tesla_news.dart';
-import 'package:news_app/models/tesla_model.dart';
+import 'package:news_app/helpers/apple_news.dart';
+import 'package:news_app/models/apple_model.dart';
 import 'package:news_app/utilities/exports.dart';
 
-class TeslaTabBarView extends StatefulWidget {
-  const TeslaTabBarView({super.key});
+class AppleTabBarView extends StatefulWidget {
+  const AppleTabBarView({super.key});
 
   @override
-  State<TeslaTabBarView> createState() => _TeslaTabBarViewState();
+  State<AppleTabBarView> createState() => _AppleTabBarViewState();
 }
 
-class _TeslaTabBarViewState extends State<TeslaTabBarView> {
-  List<TeslaNews> _teslaNews = [];
+class _AppleTabBarViewState extends State<AppleTabBarView> {
+  List<AppleNews> _appleNews = [];
   bool _loading = true;
 
   @override
@@ -24,7 +24,7 @@ class _TeslaTabBarViewState extends State<TeslaTabBarView> {
   _getNews() async {
     News newsClass = News();
     await newsClass.getNews();
-    _teslaNews = newsClass.teslaNews;
+    _appleNews = newsClass.appleNews;
     setState(() {
       _loading = false;
     });
@@ -36,7 +36,7 @@ class _TeslaTabBarViewState extends State<TeslaTabBarView> {
       width: double.infinity,
       child: ListView.builder(
           shrinkWrap: true,
-          itemCount: _teslaNews.length,
+          itemCount: _appleNews.length,
           itemBuilder: (context, index) {
             return Container(
               padding: EdgeInsets.all(8),
@@ -48,7 +48,7 @@ class _TeslaTabBarViewState extends State<TeslaTabBarView> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: CachedNetworkImage(
-                      imageUrl: _teslaNews[index].urlToImage,
+                      imageUrl: _appleNews[index].urlToImage,
                       height: 90,
                       width: 80,
                       fit: BoxFit.cover,
@@ -62,11 +62,11 @@ class _TeslaTabBarViewState extends State<TeslaTabBarView> {
                       children: [
                         Expanded(
                           child: Text(
-                            _teslaNews[index].title,
+                            _appleNews[index].title,
                             style: TextStyle(fontSize: 14.sp),
                           ),
                         ),
-                        Text(_teslaNews[index].publisher,
+                        Text(_appleNews[index].publisher,
                             style: TextStyle(
                                 fontSize: 12.sp, color: Colors.blue))
                       ],

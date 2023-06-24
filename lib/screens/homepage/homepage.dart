@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:news_app/helpers/trending_news.dart';
+import 'package:news_app/helpers/headlines_news.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:news_app/screens/tabs/tabbar.dart';
 
@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<TrendingNews> _trendingNews = [];
+  List<HeadlineNews> _headlineNews = [];
   bool _loading = true;
 
   @override
@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   _getNews() async {
     News newsClass = News();
     await newsClass.getNews();
-    _trendingNews = newsClass.trendingNews;
+    _headlineNews = newsClass.headlineNews;
     setState(() {
       _loading = false;
     });
@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 8,
+      length: 5,
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -62,14 +62,15 @@ class _HomePageState extends State<HomePage> {
                       Frame(title: 'Trending'),
                       vHeight,
                       BigNewsCard(
-                        title: _trendingNews[4].title,
-                        image: _trendingNews[4].urlToImage,
-                        publisher: _trendingNews[4].publisher,
-                        author: _trendingNews[4].author,
+                        title: _headlineNews[3].title,
+                        image: _headlineNews[3].urlToImage,
+                        publisher: _headlineNews[3].publisher,
+                        author: _headlineNews[3].author,
                       ),
                       SizedBox(height: 10),
                       Frame(title: 'Latest'),
-                      TabBarSection(trendingNews: _trendingNews),
+                      Expanded(
+                          child: TabBarSection(headlineNews: _headlineNews)),
                     ],
                   ),
           ),
