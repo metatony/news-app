@@ -1,14 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:device_preview/device_preview.dart';
-import 'package:news_app/screens/homepage/homepage.dart';
 import 'utilities/exports.dart';
 
 void main() {
   runApp(
     DevicePreview(
       builder: (context) => MyApp(),
-      enabled: false,
+      enabled: true,
     ),
   );
 }
