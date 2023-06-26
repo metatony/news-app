@@ -16,3 +16,6 @@ export 'package:news_app/screens/tabs/tech_tab.dart';
 export 'package:news_app/screens/tabs/tesla_tab.dart';
 export 'package:news_app/screens/tabs/wallstreet_tab.dart';
 export 'package:url_launcher/url_launcher.dart';
+export 'package:page_transition/page_transition.dart';
+export 'package:flutter_spinkit/flutter_spinkit.dart';
+export 'package:news_app/widgets/appbar.dart';

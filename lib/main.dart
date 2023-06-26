@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
             fontFamily: GoogleFonts.poppins().fontFamily),
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: SplashScreen(),
       ),
     );
   }

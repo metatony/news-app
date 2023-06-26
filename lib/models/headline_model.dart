@@ -3,8 +3,10 @@ class HeadlineNews {
   String urlToImage;
   String author;
   String publisher;
+  String url;
 
-  HeadlineNews({
+  HeadlineNews( {
+    required this.url,
     required this.title,
     required this.urlToImage,
     required this.publisher,

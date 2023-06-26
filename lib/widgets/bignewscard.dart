@@ -34,17 +34,14 @@ class BigNewsCard extends StatelessWidget {
                       ))),
             ),
             SizedBox(height: 8.h),
-            Text(title.length > 5 ? '${title.substring(0, 55)}...' : title,
-                style: smallText ),
+            Text(title, style: smallText),
             Row(
               children: [
                 Text(publisher,
                     style: TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 14.sp)),
+                        fontWeight: FontWeight.w500, fontSize: 14.sp, color: Colors.blue)),
                 width,
                 vHeight,
-                //Text('Author : $author',
-                   // style: TextStyle(color: Colors.grey, fontSize: 14.sp)),
               ],
             ),
           ],
@@ -53,3 +50,5 @@ class BigNewsCard extends StatelessWidget {
     );
   }
 }
+
+// .length > 5 ? '${title.substring(0, 55)}...' : title,

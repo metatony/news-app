@@ -3,8 +3,10 @@ class WallStreetNews {
   String urlToImage;
   String author;
   String publisher;
+  String url;
 
   WallStreetNews({
+    required this.url,
     required this.title,
     required this.urlToImage,
     required this.publisher,

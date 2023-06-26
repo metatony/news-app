@@ -19,7 +19,8 @@ class News {
           title: eachNews['title'] ?? 'No data Available',
           urlToImage: eachNews['urlToImage'] ?? 'No data Available',
           publisher: eachNews['source']['name'] ?? 'No data Available',
-          author: eachNews['author'] ?? 'No data Available',
+          author: eachNews['author'] ?? 'No data Available', 
+          url: eachNews['url'] ?? 'No data Available',
         );
         wallStreetNews.add(wallStreetList);
       }

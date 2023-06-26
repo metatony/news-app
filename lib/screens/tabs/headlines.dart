@@ -10,6 +10,14 @@ class AllTabBarView extends StatelessWidget {
 
   final List<HeadlineNews> _headlineNews;
 
+  //this url launcher is for desktop platform. not for android/iOS.
+  Future<void> _launchURL({required Uri uri}) async {
+    if (!await canLaunchUrl(uri)) {
+      throw 'could not launch $uri';
+    }
+    await launchUrl(uri, mode: LaunchMode.inAppWebView);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -22,38 +30,44 @@ class AllTabBarView extends StatelessWidget {
               padding: EdgeInsets.all(8),
               height: 100.h,
               width: 264.w,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: CachedNetworkImage(
-                      imageUrl: _headlineNews[index].urlToImage,
-                      height: 90,
-                      width: 80,
-                      fit: BoxFit.cover,
+              child: InkWell(
+                onTap: () {
+                  final url = Uri.parse(_headlineNews[index].url);
+                  _launchURL(uri: url);
+                },
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: CachedNetworkImage(
+                        imageUrl: _headlineNews[index].urlToImage,
+                        height: 90,
+                        width: 80,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                  width,
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            _headlineNews[index].title,
-                            style: TextStyle(fontSize: 14.sp),
+                    width,
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              _headlineNews[index].title,
+                              style: TextStyle(fontSize: 14.sp),
+                            ),
                           ),
-                        ),
-                        Text(_headlineNews[index].publisher,
-                            style:
-                                TextStyle(fontSize: 12.sp, color: Colors.blue))
-                      ],
-                    ),
-                  )
-                ],
+                          Text(_headlineNews[index].publisher,
+                              style: TextStyle(
+                                  fontSize: 12.sp, color: Colors.blue))
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             );
           }),

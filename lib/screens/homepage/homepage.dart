@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:news_app/helpers/headlines_news.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:news_app/screens/tabs/tabbar.dart';
+import 'package:news_app/api/headlines_news.dart';
+import 'package:news_app/screens/homepage/tabfullscreen.dart';
+import 'package:news_app/screens/homepage/trending_page.dart';
+import 'package:news_app/screens/tabs/tab_header.dart';
 
 import '../../utilities/exports.dart';
 
@@ -48,18 +49,18 @@ class _HomePageState extends State<HomePage> {
                   )
                 : Column(
                     children: [
-                      SizedBox(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image.asset('images/Vector (1).png'),
-                            Icon(FeatherIcons.bell)
-                          ],
-                        ),
-                      ),
+                      MyAppbar(),
                       vHeight,
-                      Frame(title: 'Trending'),
+                      Frame(title: 'Trending', onTap: () {
+                         Navigator.push(
+                      context,
+                      PageTransition(
+                        duration: Duration(milliseconds: 600),
+                        type: PageTransitionType.bottomToTop,
+                        child: TrendingScreen(headlineNews: _headlineNews),
+                      ),
+                    );
+                      },),
                       vHeight,
                       BigNewsCard(
                         title: _headlineNews[3].title,
@@ -68,7 +69,16 @@ class _HomePageState extends State<HomePage> {
                         author: _headlineNews[3].author,
                       ),
                       SizedBox(height: 10),
-                      Frame(title: 'Latest'),
+                      Frame(title: 'Latest', onTap: () {
+                        Navigator.push(
+                      context,
+                      PageTransition(
+                        duration: Duration(milliseconds: 600),
+                        type: PageTransitionType.bottomToTop,
+                        child: TabFullScreen(headlineNews: _headlineNews,),
+                      ),
+                    );
+                      },),
                       Expanded(
                           child: TabBarSection(headlineNews: _headlineNews)),
                     ],
