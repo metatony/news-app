@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:news_app/api/tech_news.dart';
 import 'package:news_app/models/tech_model.dart';
 import 'package:news_app/utilities/exports.dart';

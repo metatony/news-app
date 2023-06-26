@@ -8,44 +8,43 @@ class BigNewsCard extends StatelessWidget {
     required this.title,
     required this.image,
     required this.author,
-    required this.publisher,
+    required this.publisher, required this.url,
   });
 
-  final String title, image, author, publisher;
+  final String title, url, image, author, publisher;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        padding: EdgeInsets.all(5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: SizedBox(
-                  height: 183.h,
-                  width: 364.w,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10.r),
-                      child: CachedNetworkImage(
-                        imageUrl: image,
-                        fit: BoxFit.cover,
-                      ))),
-            ),
-            SizedBox(height: 8.h),
-            Text(title, style: smallText),
-            Row(
-              children: [
-                Text(publisher,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 14.sp, color: Colors.blue)),
-                width,
-                vHeight,
-              ],
-            ),
-          ],
-        ),
+    return Container(
+      padding: EdgeInsets.all(5),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: SizedBox(
+                height: 183.h,
+                width: 364.w,
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.r),
+                    child: CachedNetworkImage(
+                      imageUrl: image,
+                      fit: BoxFit.cover,
+                    ))),
+          ),
+          SizedBox(height: 8.h),
+          Text(title, style: smallText),
+          Row(
+            children: [
+              Text(publisher,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14.sp,
+                      color: Colors.blue)),
+              width,
+              vHeight,
+            ],
+          ),
+        ],
       ),
     );
   }

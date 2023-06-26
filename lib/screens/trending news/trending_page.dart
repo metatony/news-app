@@ -10,6 +10,14 @@ class TrendingScreen extends StatelessWidget {
 
   final List<HeadlineNews> _headlineNews;
 
+  //this url launcher is for desktop platform. not for android/iOS.
+  Future<void> _launchURL({required Uri uri}) async {
+    if (!await canLaunchUrl(uri)) {
+      throw 'could not launch $uri';
+    }
+    await launchUrl(uri, mode: LaunchMode.inAppWebView);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,11 +48,18 @@ class TrendingScreen extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: _headlineNews.length,
                   itemBuilder: ((context, index) {
-                    return BigNewsCard(
-                      title: _headlineNews[index].title,
-                      image: _headlineNews[index].urlToImage,
-                      author: _headlineNews[index].author,
-                      publisher: _headlineNews[index].publisher,
+                    return InkWell(
+                      onTap: () {
+                        final url = Uri.parse(_headlineNews[index].url);
+                        _launchURL(uri: url);
+                      },
+                      child: BigNewsCard(
+                        url: _headlineNews[index].url,
+                        title: _headlineNews[index].title,
+                        image: _headlineNews[index].urlToImage,
+                        author: _headlineNews[index].author,
+                        publisher: _headlineNews[index].publisher,
+                      ),
                     );
                   }))
             ],

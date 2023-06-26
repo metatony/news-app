@@ -2,7 +2,7 @@
 
 import 'package:news_app/api/headlines_news.dart';
 import 'package:news_app/screens/homepage/tabfullscreen.dart';
-import 'package:news_app/screens/homepage/trending_page.dart';
+import 'package:news_app/screens/trending%20news/trending_page.dart';
 import 'package:news_app/screens/tabs/tab_header.dart';
 
 import '../../utilities/exports.dart';
@@ -63,6 +63,7 @@ class _HomePageState extends State<HomePage> {
                       },),
                       vHeight,
                       BigNewsCard(
+                        url: _headlineNews[3].url,
                         title: _headlineNews[3].title,
                         image: _headlineNews[3].urlToImage,
                         publisher: _headlineNews[3].publisher,
