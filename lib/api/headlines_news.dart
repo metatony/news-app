@@ -7,8 +7,7 @@ class News {
   List<HeadlineNews> headlineNews = [];
 
   Future<void> getNews() async {
-    String url =
-        'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=6d18482b6ce244cca73a6f19a42e926b';
+    String url = '';
 
     var response = await http.get(Uri.parse(url));
     var jsonData = jsonDecode(response.body);
