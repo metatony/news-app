@@ -18,11 +18,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      useInheritedMediaQuery: true,
       designSize: Size(428, 926),
       minTextAdapt: true,
       builder: (BuildContext context, child) => MaterialApp(
         theme: ThemeData(
-            appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
+            //appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
             fontFamily: GoogleFonts.poppins().fontFamily),
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),

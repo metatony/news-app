@@ -7,6 +7,7 @@ class News {
   List<WallStreetNews> wallStreetNews = [];
 
   Future<void> getNews() async {
+    // get api key from news.org
     String url = '';
 
     var response = await http.get(Uri.parse(url));
