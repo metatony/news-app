@@ -21,6 +21,7 @@ class TrendingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: SafeArea(
@@ -39,7 +40,7 @@ class TrendingScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold, fontSize: 16.sp)),
                   Icon(
                     FeatherIcons.arrowLeft,
-                    color: Colors.white,
+                    color: Colors.transparent,
                   ),
                 ],
               ),

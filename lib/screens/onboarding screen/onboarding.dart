@@ -14,6 +14,7 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
         body: Stack(
       children: [
         Positioned(
@@ -23,10 +24,7 @@ class OnboardingScreen extends StatelessWidget {
           right: 0,
           child: Padding(
             padding: EdgeInsets.only(bottom: 50.h),
-            child: 
-            
-            
-            Column(
+            child: Column(
               children: [
                 Expanded(
                   flex: 2,
@@ -91,10 +89,6 @@ class OnboardingScreen extends StatelessWidget {
                 )
               ],
             ),
-
-
-
-            
           ),
         )
       ],

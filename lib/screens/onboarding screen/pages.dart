@@ -15,6 +15,8 @@ class Pages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
+
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +39,7 @@ class Pages extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 24.sp)),
                   SizedBox(height: 5.h),
-                  Text(body, style: TextStyle(fontSize: 18.sp)),
+                  Text(body, style: TextStyle(fontSize: 18.sp, color: Theme.of(context).colorScheme.secondary,)),
                 ],
               ),
             ),

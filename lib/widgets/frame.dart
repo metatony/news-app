@@ -25,7 +25,7 @@ class Frame extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 14.sp,
-                    color: Color(0xff4E4B66))),
+                    color: Theme.of(context).colorScheme.secondary,)),
           ),
         ],
       ),

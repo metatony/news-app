@@ -8,7 +8,7 @@ class News {
 
   Future<void> getNews() async {
     // get api key from news.org
-    String url = '';
+    String url = 'https://newsapi.org/v2/everything?q=tesla&from=2023-05-30&sortBy=publishedAt&apiKey=6d18482b6ce244cca73a6f19a42e926b';
 
     var response = await http.get(Uri.parse(url));
     var jsonData = jsonDecode(response.body);

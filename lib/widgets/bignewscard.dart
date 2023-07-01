@@ -32,7 +32,7 @@ class BigNewsCard extends StatelessWidget {
                     ))),
           ),
           SizedBox(height: 8.h),
-          Text(title, style: smallText),
+          Text(title, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: Theme.of(context).colorScheme.primary)),
           Row(
             children: [
               Text(publisher,

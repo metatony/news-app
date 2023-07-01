@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:news_app/screens/tabs/tab_header.dart';
+import 'package:news_app/screens/tabs/tab%20header/tab_header.dart';
 import 'package:news_app/utilities/exports.dart';
 
 class TabFullScreen extends StatelessWidget {
@@ -16,6 +16,7 @@ class TabFullScreen extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
         body: Padding(
           padding: const EdgeInsets.all(24.0),
           child: SafeArea(

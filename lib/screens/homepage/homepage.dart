@@ -3,7 +3,7 @@
 import 'package:news_app/api/headlines_news.dart';
 import 'package:news_app/screens/homepage/tabfullscreen.dart';
 import 'package:news_app/screens/trending%20news/trending_page.dart';
-import 'package:news_app/screens/tabs/tab_header.dart';
+import 'package:news_app/screens/tabs/tab%20header/tab_header.dart';
 
 import '../../utilities/exports.dart';
 
@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
         body: Padding(
           padding: const EdgeInsets.all(24.0),
           child: SafeArea(

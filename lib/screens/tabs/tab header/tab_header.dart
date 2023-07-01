@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import '../../utilities/exports.dart';
+import '../../../utilities/exports.dart';
 
 class TabBarSection extends StatelessWidget {
   const TabBarSection({
@@ -20,7 +20,7 @@ class TabBarSection extends StatelessWidget {
             isScrollable: true,
             indicatorSize: TabBarIndicatorSize.label,
             labelPadding: EdgeInsets.symmetric(horizontal: 5.5.w),
-            labelColor: Colors.black,
+            labelColor: Theme.of(context).colorScheme.secondary,
             tabs: [
               ...List.generate(
                 newsLabel.length,
