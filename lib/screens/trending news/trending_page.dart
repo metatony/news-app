@@ -10,7 +10,7 @@ class TrendingScreen extends StatelessWidget {
 
   final List<HeadlineNews> _headlineNews;
 
-  //this url launcher is for desktop platform. not for android/iOS.
+  //this url launcher function is for desktop platform. not for android/iOS.
   Future<void> _launchURL({required Uri uri}) async {
     if (!await canLaunchUrl(uri)) {
       throw 'could not launch $uri';
