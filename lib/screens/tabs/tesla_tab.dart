@@ -29,10 +29,10 @@ class _TeslaTabBarViewState extends State<TeslaTabBarView> {
       _loading = false;
     });
   }
-
-//this url launcher is for desktop platform. not for android/iOS.
+  
+  //url launcher
   Future<void> _launchURL({required Uri uri}) async {
-    if (!await canLaunchUrl(uri)) {
+    if (!await launchUrl(uri)) {
       throw 'could not launch $uri';
     }
     await launchUrl(uri, mode: LaunchMode.inAppWebView);

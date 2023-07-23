@@ -10,9 +10,9 @@ class AllTabBarView extends StatelessWidget {
 
   final List<HeadlineNews> _headlineNews;
 
-  //this url launcher is for desktop platform. not for android/iOS.
+  //url launcher
   Future<void> _launchURL({required Uri uri}) async {
-    if (!await canLaunchUrl(uri)) {
+    if (!await launchUrl(uri)) {
       throw 'could not launch $uri';
     }
     await launchUrl(uri, mode: LaunchMode.inAppWebView);

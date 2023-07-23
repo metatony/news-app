@@ -2,7 +2,9 @@
 
 import 'package:news_app/api/apple_news.dart';
 import 'package:news_app/models/apple_model.dart';
+import 'package:news_app/screens/tabs/tab%20header/newspage.dart';
 import 'package:news_app/utilities/exports.dart';
+import 'package:url_launcher/link.dart';
 
 class AppleTabBarView extends StatefulWidget {
   const AppleTabBarView({super.key});
@@ -30,12 +32,14 @@ class _AppleTabBarViewState extends State<AppleTabBarView> {
     });
   }
 
-  //this url launcher is for desktop platform. not for android/iOS.
+  //url launcher
   Future<void> _launchURL({required Uri uri}) async {
-    if (!await canLaunchUrl(uri)) {
+    if (!await launchUrl(uri)) {
       throw 'could not launch $uri';
-    }
-    await launchUrl(uri, mode: LaunchMode.inAppWebView);
+      
+      
+    }await launchUrl(uri, mode: LaunchMode.inAppWebView);
+    
   }
 
   @override
@@ -53,14 +57,23 @@ class _AppleTabBarViewState extends State<AppleTabBarView> {
               shrinkWrap: true,
               itemCount: _appleNews.length,
               itemBuilder: (context, index) {
+
                 return Container(
                   padding: EdgeInsets.all(8),
                   height: 100.h,
                   width: 264.w,
                   child: InkWell(
                     onTap: () {
-                      final url = Uri.parse(_appleNews[index].url);
+                     final url = Uri.parse(_appleNews[index].url);
                       _launchURL(uri: url);
+                      // final url = _appleNews[index].url;
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => NewsPage(newsUrl: url ),
+
+                      // ),
+                      // );
                     },
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
