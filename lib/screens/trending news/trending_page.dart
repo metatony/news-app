@@ -12,7 +12,7 @@ class TrendingScreen extends StatelessWidget {
 
   //this url launcher function is for desktop platform. not for android/iOS.
   Future<void> _launchURL({required Uri uri}) async {
-    if (!await canLaunchUrl(uri)) {
+    if (!await launchUrl(uri)) {
       throw 'could not launch $uri';
     }
     await launchUrl(uri, mode: LaunchMode.inAppWebView);

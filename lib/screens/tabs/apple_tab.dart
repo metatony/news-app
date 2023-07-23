@@ -2,9 +2,7 @@
 
 import 'package:news_app/api/apple_news.dart';
 import 'package:news_app/models/apple_model.dart';
-import 'package:news_app/screens/tabs/tab%20header/newspage.dart';
 import 'package:news_app/utilities/exports.dart';
-import 'package:url_launcher/link.dart';
 
 class AppleTabBarView extends StatefulWidget {
   const AppleTabBarView({super.key});
