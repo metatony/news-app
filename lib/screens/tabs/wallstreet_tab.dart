@@ -84,6 +84,7 @@ class _WallStreetTabBarViewState extends State<WallStreetTabBarView> {
                               Expanded(
                                 child: Text(
                                   _wallStreetNews[index].title,
+                                  maxLines: 2,
                                   style: TextStyle(fontSize: 14.sp),
                                 ),
                               ),

@@ -64,14 +64,7 @@ class _AppleTabBarViewState extends State<AppleTabBarView> {
                     onTap: () {
                      final url = Uri.parse(_appleNews[index].url);
                       _launchURL(uri: url);
-                      // final url = _appleNews[index].url;
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => NewsPage(newsUrl: url ),
-
-                      // ),
-                      // );
+                   
                     },
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,6 +88,7 @@ class _AppleTabBarViewState extends State<AppleTabBarView> {
                               Expanded(
                                 child: Text(
                                   _appleNews[index].title,
+                                  maxLines: 2,
                                   style: TextStyle(fontSize: 14.sp),
                                 ),
                               ),

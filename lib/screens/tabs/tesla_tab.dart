@@ -85,6 +85,7 @@ class _TeslaTabBarViewState extends State<TeslaTabBarView> {
                               Expanded(
                                 child: Text(
                                   _teslaNews[index].title,
+                                  maxLines: 2,
                                   style: TextStyle(fontSize: 14.sp),
                                 ),
                               ),

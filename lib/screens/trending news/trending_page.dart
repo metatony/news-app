@@ -10,7 +10,7 @@ class TrendingScreen extends StatelessWidget {
 
   final List<HeadlineNews> _headlineNews;
 
-  //this url launcher function is for desktop platform. not for android/iOS.
+  // url launcher
   Future<void> _launchURL({required Uri uri}) async {
     if (!await launchUrl(uri)) {
       throw 'could not launch $uri';
@@ -25,30 +25,31 @@ class TrendingScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: SafeArea(
-          child: ListView(
-            children: [
-              vHeight,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: Icon(FeatherIcons.arrowLeft),
-                  ),
-                  Text('Trending',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16.sp)),
-                  Icon(
-                    FeatherIcons.arrowLeft,
-                    color: Colors.transparent,
-                  ),
-                ],
-              ),
-              vHeight,
-              ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: _headlineNews.length,
-                  itemBuilder: ((context, index) {
+          child: SizedBox(
+            width: double.infinity,
+            child: ListView(
+              children: [
+                vHeight,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: Icon(FeatherIcons.arrowLeft),
+                    ),
+                    Text('Trending',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16.sp)),
+                    Icon(
+                      FeatherIcons.arrowLeft,
+                      color: Colors.transparent,
+                    ),
+                  ],
+                ),
+                vHeight,
+                ...List.generate(
+                  _headlineNews.length,
+                  (index) {
                     return InkWell(
                       onTap: () {
                         final url = Uri.parse(_headlineNews[index].url);
@@ -62,8 +63,10 @@ class TrendingScreen extends StatelessWidget {
                         publisher: _headlineNews[index].publisher,
                       ),
                     );
-                  }))
-            ],
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

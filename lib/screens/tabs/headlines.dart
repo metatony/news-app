@@ -57,6 +57,7 @@ class AllTabBarView extends StatelessWidget {
                           Expanded(
                             child: Text(
                               _headlineNews[index].title,
+                              maxLines: 2,
                               style: TextStyle(fontSize: 14.sp),
                             ),
                           ),

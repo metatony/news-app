@@ -84,6 +84,7 @@ class _TechTabBarViewState extends State<TechTabBarView> {
                               Expanded(
                                 child: Text(
                                   _techNews[index].title,
+                                  maxLines: 2,
                                   style: TextStyle(fontSize: 14.sp),
                                 ),
                               ),
