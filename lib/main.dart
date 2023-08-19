@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:device_preview/device_preview.dart';
-import 'package:news_app/screens/homepage/homepage.dart';
 import 'package:news_app/theme/dark_theme.dart';
 import 'package:news_app/theme/light_theme.dart';
 import 'utilities/exports.dart';
